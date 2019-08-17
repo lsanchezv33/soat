@@ -1,0 +1,36 @@
+<div class="page-content">
+  <div class="container aligner">
+    <div class="row w100">
+      <div class="pt10 pb10">
+        <h3 class="flow-text"> <%= t('panel.policies') %> </h3>
+      </div>
+
+      <table class="responsive-table hightlight">
+        <thead>
+          <tr>
+            <th>Card number</th>
+            <th>Cardholder</th>
+            <th>Exp. Date</th>
+            <th>Quotes</th>
+            <th>Vehicles</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @policies.each do |policy| %>
+            <tr>
+              <td><%= policy.card_number %></td>
+              <td><%= policy.cardholder %></td>
+              <td><%= policy.expiration_date.strftime('%d/%M/%Y %H:%M %p') %></td>
+              <td><%= policy.quotes %></td>
+              <td><%= policy.vehicles.map(&:license_plate).join(" ") %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+</div>

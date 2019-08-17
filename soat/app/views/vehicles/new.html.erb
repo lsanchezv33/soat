@@ -1,0 +1,19 @@
+<div class="col s12 l2 p10 mn">
+	<%= link_to t('buttons.back'), user_vehicles_path(@user), class:'btn btn-small left grey lighten-1 mr10 pb10 mb20' %>
+</div>
+
+<div class="container aligner minh-600">
+  <div class="row w100">
+    <%= render 'layouts/notice' %>
+
+    <div class="col s10 offset-s1 m6 offset-m3 z-depth-2 p20 br4 hoverable">
+      <div class="left pl20 mb20">
+        <h3 class="flow-text mtn">
+          <%= I18n.t('forms.new', resource:'Vehicle') %>
+        </h3>
+      </div>
+
+      <%= render 'form', vehicle: @vehicle %>
+    </div>
+  </div>
+</div>

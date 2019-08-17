@@ -1,0 +1,60 @@
+<div class="container aligner minh-600">
+  <div class="row w100" id="my-login-screen">
+    <%= render 'layouts/notice' %>
+
+    <div class="col s10 offset-s1 m6 offset-m3 z-depth-2 p20 br4 hoverable mt30">
+      <div class="left pl20 mb20">
+        <h3 class="flow-text mtn">
+          <%= t('app.log_in') %>
+        </h3>
+      </div>
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class:'col s12'}) do |f| %>
+        <div class="input-field col s12 mtn">
+          <i class="material-icons prefix teal-text">email</i>
+          <%= f.email_field :email, autofocus: true, autocomplete: "off", required: true, class:'validate validate-field' %>
+          <label for="user_email">
+            <%= t('inputs.email') %>
+          </label>
+          <span class="helper-text" data-error="wrong e-mail" data-success="right"></span>
+        </div>
+
+        <div class="input-field col s12 mtn mbn">
+          <i class="material-icons prefix teal-text">lock_outline</i>
+          <%= f.password_field :password, autocomplete: "off", required: true, class:'validate-field' %>
+          <label for="user_password">
+            <%= t('inputs.password') %>
+          </label>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="col s12 pb20 mt10">
+            <label>
+              <%= f.check_box :remember_me %>
+              <span class="flow-text ml5">
+                <%= t('inputs.remember_me') %>
+              </span>
+            </label>
+          </div>
+        <% end %>
+
+        <div class="col s12 pt10 pb10 center">
+          <%= f.button :submit, class:'btn btn-small waves-effect teal lighten-2' do %>
+            <span class="white-text">
+              <%= t('app.sign_in') %>
+            </span>
+          <% end %>
+        </div>
+
+        <div class="col s12 pt20 center">
+          <%= link_to new_user_registration_path, class:'underline' do %>
+            <span class="teal-text">
+              <%= t('app.sign_up') %>
+            </span>
+          <% end %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>

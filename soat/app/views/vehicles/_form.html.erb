@@ -1,0 +1,44 @@
+<%= form_with(model: [@user, vehicle], local: true, html: {class:'col s12'}) do |f| %>
+  <% if vehicle.errors.any? %>
+    <%= render 'layouts/error_messages', resource: vehicle %>
+  <% end %>
+
+  <div class="input-field col s12 mtn">
+    <%= f.text_field :license_plate, autofocus: true, autocomplete: "off", required: true, class:'validate-field', maxlength: 10 %>
+    <%= f.label :license_plate %>
+  </div>
+
+  <div class="input-field col s12 mtn">
+    <%= f.number_field :age, autocomplete: "off", required: true, class:'validate-field', maxlength: 2 %>
+    <%= f.label :age %>
+  </div>
+
+  <div class="input-field col s12 mtn">
+    <%= f.text_field :passenger_number, autocomplete: "off", required: true, class:'validate-field', maxlength: 2 %>
+    <%= f.label :passenger_number %>
+  </div>
+
+  <div class="input-field col s12 mtn">
+    <%= f.text_field :car_cylinder, autocomplete: "off", required: true, class:'validate-field', maxlength: 10 %>
+    <%= f.label :car_cylinder %>
+  </div>
+
+  <div class="input-field col s12 mtn">
+    <%= f.number_field :tons, autocomplete: "off", required: true, class:'validate-field', maxlength: 5 %>
+    <%= f.label :tons %>
+  </div>
+
+  <div class="input-field col s12 mtn">
+    <%= f.select :trade_charge_id, @trade_charges.collect{|t| [t.basic_info, t.id]}, required: true, class:'validate-field' %>
+    <%= f.label :trade_charge %>
+  </div>
+
+  <div class="col s12 pt10 pb10 center">
+    <%= f.button :submit, class:'btn btn-small waves-effect teal lighten-2' do %>
+      <span class="white-text">
+        <%= t('forms.accept') %>
+      </span>
+    <% end %>
+  </div>
+<% end %>
+

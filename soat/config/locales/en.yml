@@ -1,0 +1,95 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+en:
+  hello: 'Hello!'
+  validations:
+    already_exists: 'Already exists!'
+    unentered: 'unentered'
+    minimum_length: 'characters minimum'
+  app:
+    title: 'Soat'
+    log_in: 'Log In'
+    sign_in: 'Sign In'
+    sign_up: 'Sign Up As Customer'
+    forgot_password: 'Forgot your password?'
+    send_instructions: 'Send me reset password instructions'
+  dashboard:
+    title: 'Dashboard!!!'
+  panel:
+    welcome: 'Welcome!!!'
+    home: 'Home'
+    policy_payments: 'Policy payments'
+    trade_charges: 'Trade charges'
+    users: 'Users'
+    vehicles: 'Vehicles'
+    customers: 'Customers'
+    policies: 'Policies'
+  notice:
+    title: 'Notice'
+  alert:
+    title: 'Alert'
+  inputs:
+    name: 'Name'
+    surname: 'Surname'
+    phone: 'Phone'
+    document_type: 'Document type'
+    document_number: 'Document number'
+    email: 'Email'
+    password: 'Password'
+    password_confirmation: 'Password Confirmation'
+    remember_me: 'Remember me'
+  forms:
+    new: "New %{resource}"
+    edit: "Edit %{resource}"
+    create: "Create %{resource}"
+    accept: "Accept"
+  buttons:
+    back: 'Back'
+  activerecord:
+    models:
+      policy_payment: 'Policy payment'
+      trade_charge: 'Trade charge'
+      user: 'User'
+      vehicle: 'Vehicle'
+      vehicle_payment: 'Vehicle payment'
+    attributes:
+      policy_paymment:
+        card_number: 'Card number'
+        cardholder: 'Cardholder'
+        expiration_date: 'Expiration date'
+        secure_code: 'Secure code'
+        quotes: 'Quotes'
+      trade_charge:
+        kind_class: 'Kind'
+        subtype: 'Subtype'
+        runt: 'RUNT'
+        revenue: 'Revenue'
+      user:
+        name: 'Name'
+        surname: 'Surname'
+        email: 'E-mail'
+        phone: 'Phone'
+        docuemnt_type: 'Document type'
+        document_number: 'Document number'
+      vehicle:
+        license_plate: 'License plate'
+        age: 'Age'
+        passenger_number: 'Passenger number'
+        car_cylinder: 'Car cylinder'
+        tons: 'Tons'
+        user_id: 'User'
+        trade_charge_id: 'Trade charge'
+      vehicle_payment:
+        vehicle_id: 'Vehicle'
+        policy_payment_id: 'Policy payment'
+  errors:
+    messages:
+      already_confirmed: "was already confirmed, please try signing in"
+      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
+      expired: "has expired, please request a new one"
+      not_found: "not found"
+      not_locked: "was not locked"
+      not_saved:
+        one: "1 error prohibited this %{resource} from being saved:"
+        other: "%{count} errors prohibited this %{resource} from being saved:"

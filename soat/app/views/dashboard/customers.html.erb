@@ -1,0 +1,36 @@
+<div class="page-content">
+  <div class="container aligner">
+    <div class="row w100">
+      <div class="pt10 pb10">
+        <h3 class="flow-text"> <%= t('panel.customers') %> </h3>
+      </div>
+
+      <table class="responsive-table hightlight">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Vehicles</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @customers.each do |customer| %>
+            <tr>
+              <td><%= customer.name %></td>
+              <td><%= customer.surname %></td>
+              <td><%= customer.email %></td>
+              <td><%= customer.phone %></td>
+              <td><%= customer.vehicles.size %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+</div>

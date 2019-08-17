@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <title></title>
+  </head>
+
+  <body class="body-mailer">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto;">
+      <tbody>
+        <tr>
+          <td class="pd-td">
+            <!-- begin main block -->
+            <table cellpadding="0" cellspacing="0" width="70%" border="0" align="center">
+              <tbody>
+                <tr>
+                  <td>
+                    <p class="title-mailer bdb">
+                      <%= t('hello') %> <%= @email %>
+                    </p>
+
+                    <!-- begin wrapper -->
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                      <tbody>
+                        <tr>
+                          <td width="8" height="4" colspan="2"> <p class="content-blank-p"></p> </td>
+                          <td height="4"> <p class="content-blank-p"></p> </td>
+                          <td width="8" height="4" colspan="2"> <p class="content-blank-p"></p>
+                          </td>
+                        </tr>               
+                        <tr>
+                          <td colspan="3" rowspan="3" class="pbl30">
+
+                            <!-- begin content -->
+                            <p class="section-active-account-title bdb ph10x">
+                              Resumen de Compra <%= @vehicle.license_plate.mb_chars.upcase %>
+                            </p>
+
+                            <p class="content-title-access">
+                              FECHA: <%= @policy.created_at.strftime('%d/%M/%Y %H:%M %p') %> 
+                            </p>
+
+                            <p class="content-title-access">
+                              VALOR A PAGAR: $ <%= @trade_charge.premium + @trade_charge.revenue + @trade_charge.runt  %> 
+                            </p>
+
+                            <p class="section-active-account-title bdb ph10x">
+                              COBERTURA OFRECIDA POR EL SEGURO
+                            </p>
+
+                            <p class="content-title-access">
+                              Muerte y gastos funerarios: 750 SMLDV
+                            </p>
+
+                            <p class="content-title-access">
+                              Gastos médicos: 800 SMLDV
+                            </p>
+
+                            <p class="content-title-access">
+                              Incapacidad permanente: 180 SMLDV
+                            </p>
+
+                            <p class="content-title-access">
+                              Gastos de transporte: 10 SMLDV
+                            </p>
+
+                            <p class="space-between-p"></p>
+                            <!-- end content --> 
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- end wrapper-->
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- end main block -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- styles of mailer -->
+    <style>
+      .body-mailer{
+        font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+
+      .pd-td{padding:40px 0;}
+      .bdb{ border-bottom: 1px solid #E5E5E5; padding-top: 4px; }
+      .ph10x{padding: 0 10px;}
+
+      .title-mailer{
+        text-align: center;
+        font-size: 16px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: #626658;
+      }
+
+      .content-blank-p{
+        height: 5px;
+        margin:0;
+        font-size:1px;
+        line-height:1px;
+      }
+
+      .content-title-access{
+        margin: 0 10px 20px;
+        text-align: center;
+        padding-top: 10px;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: bold;
+        color: #484a42;
+      }
+
+      .section-active-account-title{
+        width: 98%;
+        font-size: 18px;
+        line-height: 20px;
+        font-weight: bold;
+        text-align: center;
+        color: #333;
+        margin: 0 auto;
+      }
+
+      .space-between-p{
+        width: 100%;
+        margin: 0 auto;
+        border-top: 2px solid #E5E5E5;
+        font-size: 5px;
+        line-height: 5px;
+        padding-bottom: 10px;
+      }
+    </style>
+
+  </body>
+</html>

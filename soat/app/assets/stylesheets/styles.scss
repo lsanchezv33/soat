@@ -1,0 +1,25 @@
+@import "variables";
+
+// float button right
+.icon-right{
+  position: absolute $imp;
+  right: 10px;
+}
+
+.display-block{display: block;}
+.underline{text-decoration: underline;}
+
+.aligner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-style{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer; 
+}

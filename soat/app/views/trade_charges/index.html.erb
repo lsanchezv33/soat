@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Trade Charges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kind Class</th>
+      <th>Subtype</th>
+      <th>Premium</th>
+      <th>Runt</th>
+      <th>Revenue</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trade_charges.each do |trade_charge| %>
+      <tr>
+        <td><%= trade_charge.kind_class %></td>
+        <td><%= trade_charge.subtype %></td>
+        <td><%= trade_charge.premium %></td>
+        <td><%= trade_charge.runt %></td>
+        <td><%= trade_charge.revenue %></td>
+        <td><%= link_to 'Show', trade_charge %></td>
+        <td><%= link_to 'Edit', edit_trade_charge_path(trade_charge) %></td>
+        <td><%= link_to 'Destroy', trade_charge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trade Charge', new_trade_charge_path %>
