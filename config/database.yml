@@ -6,12 +6,6 @@
 default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-production:
-  <<: *default
-  adapter: postgresql
-  encoding: unicode
-  database: <%= ENV['DATABASE'] %>
-
 development:
   <<: *default
   adapter: mysql2
@@ -21,3 +15,13 @@ development:
   username: <%= ENV['DB_USER'] %>
   password: <%= ENV['DB_PASSWORD'] %>
   socket: /tmp/mysql.sock
+
+production:
+  <<: *default
+  host: ec2-174-129-209-212.compute-1.amazonaws.com
+  adapter: postgresql
+  encoding: unicode
+  username: rnlhwrxgsjgnhg
+  password: 592de9761216639ba84c5ca3ee9260778f4c627b2534b95b5ac3acff3a4cb59e
+  database: dfpi113gj1oc4f
+  post: 5432
