@@ -18,10 +18,10 @@ development:
 
 production:
   <<: *default
-  host: ec2-174-129-209-212.compute-1.amazonaws.com
+  post: 5432
   adapter: postgresql
+  host: ec2-174-129-209-212.compute-1.amazonaws.com
   encoding: unicode
   username: rnlhwrxgsjgnhg
   password: 592de9761216639ba84c5ca3ee9260778f4c627b2534b95b5ac3acff3a4cb59e
-  database: dfpi113gj1oc4f
-  post: 5432
+  database: <%= ENV['DB_URL'] %>
