@@ -15,3 +15,11 @@ development:
   username: <%= ENV['DB_USER'] %>
   password: <%= ENV['DB_PASSWORD'] %>
   socket: /tmp/mysql.sock
+
+
+production:
+  <<: *default
+  host: localhost
+  database: <%= ENV['DATABASE'] %>
+  username:
+  password:

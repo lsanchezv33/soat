@@ -44,5 +44,8 @@ module Soat
     # Don't generate system test files.
     # It's the same that the line 29
     # config.generators.system_tests = nil
+
+    # use to not procompile assets
+    config.assets.initialize_on_precompile = false
   end
 end
