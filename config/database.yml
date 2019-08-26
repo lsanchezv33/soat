@@ -14,7 +14,7 @@ development:
   database: <%= ENV['DATABASE'] %>
   username: <%= ENV['DB_USER'] %>
   password: <%= ENV['DB_PASSWORD'] %>
-  socket: /tmp/mysql.sock
+  # socket: /tmp/mysql.sock
 
 
 production:
