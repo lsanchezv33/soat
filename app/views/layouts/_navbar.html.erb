@@ -1,0 +1,32 @@
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper red accent-3">
+      <ul id="nav-left" class="left">
+      	<% if user_signed_in? %>
+          <li>
+            <%= link_to '#', :'data-target' => "slide-out", class:"sidenav-trigger show-on-large" do %>
+              <i class="material-icons">menu</i>
+            <% end %>
+          </li>
+      	<% end %>
+      </ul>
+
+      <div class="brand-logo center">
+        <h5 class="flow-text title-app"> <%= t('app.title') %> </h5>
+      </div>
+
+      <ul id="nav-right" class="right">
+        <% if user_signed_in? %>
+        	<li>
+        		<%= link_to destroy_user_session_path, class:'show-on-large', method: :delete do %>
+        			<i class="material-icons">exit_to_app</i>
+        		<% end %>
+        	</li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<!-- Panel -->
+<%= render 'layouts/panel' %>

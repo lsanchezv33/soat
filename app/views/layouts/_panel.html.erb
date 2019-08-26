@@ -1,0 +1,42 @@
+<ul id="slide-out" class="sidenav">
+  <li>
+    <div class="user-view"> 
+      <%= image_tag 'avatar.png', class:'responsive-img circle', size:'60' %>
+      <%= link_to '#', class:'mvn display-block' do %>
+         <span class="darken-2 grey-text"> <%= current_user.set_alias %> </span>
+      <% end %>
+
+      <%= link_to '#', class:'mtn20 display-block' do %>
+        <span class="darken-2 grey-text"> <%= current_user.email %> </span>
+      <% end %>
+    </div>
+  </li>
+
+  <li>
+    <%= link_to home_path do %>
+      <%= t('panel.home') %>
+    <% end %>
+  </li>
+
+  <% if current_user.session_admin? %>
+    <li>
+      <%= link_to customers_policies_path, class:'waves-effect' do %>
+        <%= t('panel.policies') %>
+      <% end %>
+    </li>
+    <li><div class="divider"></div></li>
+    <li>
+      <%= link_to customers_path, class:'waves-effect' do %>
+        <%= t('panel.customers') %>
+      <% end %>
+    </li>
+  <% else %>
+
+    <li>
+      <%= link_to user_vehicles_path(current_user) do %>
+        <%= t('panel.vehicles') %>
+      <% end %>
+    </li>
+    <li><div class="divider"></div></li>
+  <% end %>
+</ul>

@@ -1,0 +1,36 @@
+<% if notice %>
+	<div class="row mbn" id="alert_box">
+	  <div class="col s12 m12">
+	    <div class="card teal lighten-2 mbn br4 animated fadeInDown">
+	      <div class="row mbn">
+	        <div class="col s12 m10">
+	          <div class="card-content white-text p5">
+	            <h4 class="flow-text mtn title-notice"> 
+	              <i class="material-icons">notifications_none</i>
+	              <%= t('notice.title') %>
+	            </h4>
+	            <p class="pl10"> <%= notice %> </p>
+	          </div>
+	        </div>
+	        <div class="col s12 m2">
+	          <i class="material-icons icon-style" id="alert_close" aria-hidden="true">close</i>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+<% elsif alert %>
+  <div class="col s10 offset-s1 m6 offset-m3 mt10 pn">
+  	<ul class="collapsible message-login animated fadeInDown">
+  		<li class="active">
+  			<div class="collapsible-header amber-text text-darken-4 p8 title-alert">
+  				<i class="material-icons">warning</i>
+  				<%= t('alert.title') %>
+  			</div>
+  			<div class="collapsible-body p15">
+  				<span class="fs15"> <%= alert %> </span>
+  			</div>
+  		</li>
+  	</ul>
+  </div>
+<% end %>

@@ -1,0 +1,53 @@
+<div class="page-content">
+  <div class="container aligner">
+
+    <div class="row w100">
+      <div class="col s12">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">
+              <%= t('activerecords.models.vehicle') %>
+            </span>
+            <p>
+              <strong>License plate:</strong>
+              <%= @vehicle.license_plate %>
+            </p>
+
+            <p>
+              <strong>Age:</strong>
+              <%= @vehicle.age %>
+            </p>
+
+            <p>
+              <strong>Passenger number:</strong>
+              <%= @vehicle.passenger_number %>
+            </p>
+
+            <p>
+              <strong>Car cylinder:</strong>
+              <%= @vehicle.car_cylinder %>
+            </p>
+
+            <p>
+              <strong>Tons:</strong>
+              <%= @vehicle.tons %>
+            </p>
+
+            <p class="mt10">
+              <strong>Trade charge:</strong>
+              <ul class="ml20">
+                <li><%= @vehicle.trade_charge.kind_class %></li>
+                <li><%= @vehicle.trade_charge.subtype %></li>
+              </ul>
+            </p>
+
+            <%= link_to 'Edit', edit_user_vehicle_path(@user, @vehicle), class:'btn btn-small grey lighten-1' %>
+            <%= link_to 'Back', user_vehicles_path(@user), class:'btn btn-small grey lighten-1' %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

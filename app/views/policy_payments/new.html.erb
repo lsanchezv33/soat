@@ -1,0 +1,19 @@
+<div class="col s12 p10 mn">
+	<%= link_to t('buttons.back'), vehicle_policy_payments_path(@vehicle), class:'btn btn-small left grey lighten-1' %>
+</div>
+
+<div class="container aligner minh-600">
+  <div class="row w100">
+    <%= render 'layouts/notice' %>
+
+    <div class="col s10 offset-s1 m6 offset-m3 z-depth-2 p20 br4 hoverable">
+      <div class="left pl20 mb20">
+        <h3 class="flow-text mtn">
+          <%= I18n.t('forms.new', resource:'Policy payment') %>
+        </h3>
+      </div>
+
+      <%= render 'form', policy_payment: @policy_payment %>
+    </div>
+  </div>
+</div>

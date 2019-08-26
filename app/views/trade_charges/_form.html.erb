@@ -1,0 +1,42 @@
+<%= form_with(model: trade_charge, local: true) do |form| %>
+  <% if trade_charge.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(trade_charge.errors.count, "error") %> prohibited this trade_charge from being saved:</h2>
+
+      <ul>
+      <% trade_charge.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :kind_class %>
+    <%= form.text_field :kind_class %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subtype %>
+    <%= form.text_field :subtype %>
+  </div>
+
+  <div class="field">
+    <%= form.label :premium %>
+    <%= form.text_field :premium %>
+  </div>
+
+  <div class="field">
+    <%= form.label :runt %>
+    <%= form.text_field :runt %>
+  </div>
+
+  <div class="field">
+    <%= form.label :revenue %>
+    <%= form.text_field :revenue %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

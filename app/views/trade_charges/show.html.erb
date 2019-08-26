@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Kind class:</strong>
+  <%= @trade_charge.kind_class %>
+</p>
+
+<p>
+  <strong>Subtype:</strong>
+  <%= @trade_charge.subtype %>
+</p>
+
+<p>
+  <strong>Premium:</strong>
+  <%= @trade_charge.premium %>
+</p>
+
+<p>
+  <strong>Runt:</strong>
+  <%= @trade_charge.runt %>
+</p>
+
+<p>
+  <strong>Revenue:</strong>
+  <%= @trade_charge.revenue %>
+</p>
+
+<%= link_to 'Edit', edit_trade_charge_path(@trade_charge) %> |
+<%= link_to 'Back', trade_charges_path %>

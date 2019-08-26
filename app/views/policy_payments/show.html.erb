@@ -1,0 +1,45 @@
+<div class="page-content">
+  <div class="container aligner">
+
+    <div class="row w100">
+      <div class="col s12">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">
+              <%= t('activerecords.models.policy_payment') %>
+            </span>
+            
+            <p>
+              <strong>Card number:</strong>
+              <%= @policy_payment.card_number %>
+            </p>
+
+            <p>
+              <strong>Cardholder:</strong>
+              <%= @policy_payment.cardholder %>
+            </p>
+
+            <p>
+              <strong>Expiration date:</strong>
+              <%= @policy_payment.expiration_date %>
+            </p>
+
+            <p>
+              <strong>Secure code:</strong>
+              <%= @policy_payment.secure_code %>
+            </p>
+
+            <p>
+              <strong>Quotes:</strong>
+              <%= @policy_payment.quotes %>
+            </p>
+
+            <%= link_to 'Edit', edit_vehicle_policy_payment_path(@vehicle, @policy_payment), class:'btn btn-small grey lighten-1 mt20' %>
+            <%= link_to 'Back', vehicle_policy_payments_path(@vehicle), class:'btn btn-small grey lighten-1 mt20' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

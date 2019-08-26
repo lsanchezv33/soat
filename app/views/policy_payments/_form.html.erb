@@ -1,0 +1,44 @@
+<%= form_with(model: [@vehicle, policy_payment], local: true, html: {class:'col s12'}) do |f| %>
+  <% if policy_payment.errors.any? %>
+    <%= render 'layouts/error_messages', resource: policy_payment %>
+  <% end %>
+
+  <div class="input-field col s12 mtn">
+    <%= f.text_field :card_number, autofocus: true, autocomplete: "off", required: true, class:'validate-field', maxlength: 16, minlength: 16 %>
+    <%= f.label :card_number %>
+  </div>
+
+  <div class="input-field col s12 mtn">
+    <%= f.text_field :cardholder, autocomplete: "off", required: true, class:'validate-field', maxlength: 30 %>
+    <%= f.label :cardholder %>
+  </div>
+
+  <div class="input-field col s12 mtn">
+    <%= f.text_field :expiration_date, autocomplete: "off", required: true, class:'validate-field datepicker', value: (policy_payment.expiration_date.strftime('%b, %d %Y') if policy_payment.expiration_date) %>
+    <%= f.label :expiration_date %>
+  </div>
+
+  <div class="input-field col s12 mtn">
+    <%= text_field_tag :times, (policy_payment.expiration_date.strftime('%H:%M %p') if policy_payment.expiration_date), autocomplete: "off", required: true, class:'validate-field timepicker' %>
+    <%= label_tag :times %>
+  </div>
+
+  <div class="input-field col s12 mtn">
+    <%= f.text_field :secure_code, autocomplete: "off", required: true, class:'validate-field', maxlength: 4, minlength: 3 %>
+    <%= f.label :secure_code %>
+  </div>
+
+  <div class="input-field col s12 mtn">
+    <%= f.text_field :quotes, autocomplete: "off", required: true, class:'validate-field', maxlength: 2 %>
+    <%= f.label :quotes %>
+  </div>
+
+  <div class="col s12 pt10 pb10 center">
+    <%= f.button :submit, class:'btn btn-small waves-effect teal lighten-2' do %>
+      <span class="white-text">
+        <%= t('forms.create', resource:'Policy payment') %>
+      </span>
+    <% end %>
+  </div>
+<% end %>
+
