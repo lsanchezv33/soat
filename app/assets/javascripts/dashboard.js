@@ -49,6 +49,13 @@ function fadeOutEffect(){
 
 // Reload navbar by Materialize bug
 $(() => {
+  let remove_message = () => {
+    let user_email = document.getElementById("user_email");
+    if(user_email.value == '') user_email.classList.remove('invalid');
+  }
+
   let side_nav_page = document.querySelectorAll('.sidenav'),
       side_instance = M.Sidenav.init(side_nav_page);
+
+  document.getElementById("user_email").addEventListener("blur", remove_message);
 });
